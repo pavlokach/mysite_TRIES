@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel = 'shortcut icon' type = 'image/png' src="{{ url_for('static', filename='images/favicon.png') }}">
+        <title>Python Programming Tutorials</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <!-- Fonts end-->
+
+        <!--<link rel="stylesheet" href="../static/style.css" type="text/css"> -->
+        <link href={{ url_for("static", filename="style.css")}} rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    </head>
+    <body>
+    <script type="text/javascript">
+  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+        <form id="myForm" method="POST" action="/">
+        <div id="wrapper">
+            <div id="players">
+            
+                <div class="player">
+            <div id="field">
+                <img class="fish" src="../static/images/point.png" style="position: relative; top: {{y}}px; left: {{x}}px;">
+              <div class="__custom-wrapper">
+                <div class="newsite">
+                    <button id="name_main_button" class="diceclick" type="button">Let's start!</button>
+                    <input class="diceclick" type="submit" name="Let's start!" value="Let's start!">
+                    <div id="both_dices" style="display: none;">
+                        <img id=dice1 class="diceclick" style="height: 45px; width: 45px; cursor: pointer;" src="../static/images/5.jpg">
+                        <img id=dice2 class="diceclick" style="height: 45px; width: 45px; cursor: default;" src="../static/images/5.jpg">
+                    </div>>
+                    <input type="hidden" name="type_sent" readonly value="diceit">
+                </div>
+                <p id=question class="question">
+                    Почнемо гру!
+                </p>
+                <div id="radios" style="display: none;">
+                    <label class="radio inline">
+                        <input type="radio"  class="answer_user1" name="user_answer" value="" checked>
+                        <span class="answer_user1"></span>
+                    </label>
+                    <br>
+                    <label class="radio inline, answer_user2">
+                        <input type="radio"  class="answer_user2" name="user_answer" value="">
+                        <span class="answer_user2"></span>
+                    </label>
+                    <br>
+                    <label class="radio inline">
+                        <input type="radio" class="answer_user3" name="user_answer" value="">
+                        <span class="answer_user3"></span>
+                    </label>
+                </div>
+                <p style="font-size: 13px;">For edit: {{session}}</p>
+              </div>
+            </div>
+        </div>
+        </form>
+        <script>
+
+        </script>
+
+    </body>
+</html>

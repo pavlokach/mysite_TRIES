@@ -1,0 +1,74 @@
+/*.new {
+ background-image: url('https://img3.goodfon.ru/original/3000x2000/9/44/raznoe-igralnye-kubiki-kubik.jpg');
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}*/
+#text {
+    padding: 15px 52px;
+    background-color: #cccccc;
+    font-size: 50px;
+    border-radius: 12px;
+    border: 3px solid #ff1a1a;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.5);
+    color: #cc0000;
+    }
+
+
+#button {
+  text-align: center;
+  margin: 110px;
+}
+
+
+#text:hover {
+    background-color: #b30000;
+    color: Snow;
+}
+
+#heading {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 60px;
+  line-height: 100px;
+  text-align: center;
+  margin: 40px;
+
+}
+
+.second_heading {
+  font-family: 'Kurale', serif;
+  font-size: 30px;
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-indent: 70px;
+  line-height: 1.8;
+  margin: 90px;
+
+}
+
+body {
+  background-image: url('/static/images/8.jpg');
+  background-size: 1600px 850px
+  /*background-size: 1600px 1100px;*/
+
+}
+
+.choice {
+  text-align: center;
+
+}
+
+#choose {
+  font-family: 'Kurale', serif;
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+.choice {
+
+}
+
+.variantes {
+  font-family: 'Kurale', serif;
+  font-size: 40px
+}

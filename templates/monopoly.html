@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <link rel = 'shortcut icon' type = 'image/png' src="{{ url_for('static', filename='images/favicon.png') }}">
+	<title>Discrete Game</title>
+  <!--<link href = 'style1.css' rel = 'stylesheet' type = 'text/css'>-->
+  <link href = 'https://fonts.googleapis.com/css?family=Cormorant+Garamond=100'
+  type="text/css" rel="stylesheet">
+  <link href = 'https://fonts.googleapis.com/css?family=Cormorant+Infant'
+  type="text/css" rel="stylesheet">
+	<link href = 'https://fonts.googleapis.com/css?family=Kurale'
+  type="text/css" rel="stylesheet">
+  <link href={{ url_for("static", filename="style1.css")}} rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<div class='new'>
+  <header></header>
+	<h1 id = 'heading'>Ласкаво просимо, Колего, у високоінтелектуальну гру</h1>
+</div>
+
+ <div>
+   <h2 class='second_heading'>Люди не дозволяють Вам експерементувати на собі математику?
+    Тоді Ви потрапили,куди потрібно. Вам тут завжди раді!</h2>
+ </div>
+
+
+<!--<div class='choice'>
+  <ul id='choose'>Виберіть кількість гравців:</ul>
+  <form>
+    <div class='variantes'>
+  <input type="radio" name="number" value="two" checked>2<br>
+  <input type="radio" name="number" value="three">3<br>
+  <input type="radio" name="number" value="four">4
+</div>
+</form>
+</div>
+-->
+
+ <div id='button'>
+    <form action="./" method="POST">
+  <button id='text'>Почати гру</button>
+</form>
+</div>
+
+ <footer></footer>
+</body>
+
+</html

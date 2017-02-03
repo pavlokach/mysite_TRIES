@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel = 'shortcut icon' type = 'image/png' src="{{ url_for('static', filename='images/favicon.png') }}">
+        <title>Python Programming Tutorials</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+        <!-- Fonts end-->
+
+        <!--<link rel="stylesheet" href="../static/style.css" type="text/css"> -->
+        <link href={{ url_for("static", filename="style.css")}} rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    </head>
+    <body>
+    <script type="text/javascript">
+  var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+        <form method="POST" action="/">
+        <div id="wrapper">
+            <div id="players">
+            
+                <div class="player">
+                    <!--<a onclick="myFunction()">Roll dice</a>
+                    <input class="diceclick" onclick="myFunction()" type="submit" value="Dice it!">
+                    <input type="text" id="dice" name="dice" readonly placeholder={{dice}}>
+                    <!--<p> {{dice2}} </p>
+                    </div>
+            </div>-->
+            <div id="field">
+                <img class="fish" src="../static/images/point.png" style="position: relative; top: {{y}}px; left: {{x}}px;">
+                <!--<p>{{new25}}</p>-->
+                <!--onclick="myFunction()" href='javascript:void(0)'-->
+              <div class="__custom-wrapper">
+                <div class="newsite">
+                    <!--<input class="diceclick" type="submit" value={{name_main_button}}>-->
+                    <input class="diceclick" type="submit" name="{{name_main_button}}" value="{{name_main_button}}">
+                    {% if dice1 and dice2: %}
+                        <img class="diceclick" style="height: 45px; width: 45px; cursor: pointer;" src="../static/images/{{dice1}}.jpg">
+                        <img class="diceclick" style="height: 45px; width: 45px; cursor: default;" src="../static/images/{{dice2}}.jpg">
+                    {% endif %}
+                    <!--<input type="text" id="dice" name="dice" readonly placeholder="{{dice1, dice2}} pos {{x, y}}">-->
+                    <!--<p>{{dice1, dice2}} pos {{x, y}}</p>-->
+                    <input type="hidden" name="type_sent" readonly value="{{type_sent}}">
+                </div>
+                <p class="question">
+                  <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation-->
+                  {{question}}
+                </p>
+                <div class="maxl">
+                  
+                  {% for answer in answers %}
+                    <label class="radio inline">
+                        <input type="radio" name="user_answer" value="{{ answer }}" checked>
+                        <!--<span> Answer 1</span><br/>
+                        <span> Answer 2</span><br/>
+                        <span> Answer 3</span><br/>-->
+                        <span>{{ answer }}</span>
+                    </label>
+                    <br>
+                {% endfor %}
+                </div>
+                <p style="font-size: 13px;">For edit: {{session}}</p>
+                <!--<input class="diceclick sendclick" type="submit" value="Надіслати">-->
+                <!--<div class="answers">
+                  <p>{{x}}</p>
+                  <p>{{y}}</p>
+                  <p>{{last_answer}}</p>
+                </div>-->
+              </div>
+            </div>
+        </div>
+        </form>
+        <script>
+/*
+function myFunction() {
+    document.getElementById("dice").value = Math.floor(Math.random() * (12 - 2 + 1)) + 2;
+}
+            $(document).ready(function(){
+            var tempScrollTop = $(window).scrollTop();
+                $('#fishfish').draggable();
+                $(window).scrollTop(tempScrollTop);
+            });
+*/
+</script>
+<script type=text/javascript>
+
+  var movingFish = function(last_move) {
+	  if (last_move == 12){
+		if location == 9 {
+			$('#fish').animate({left: '-=60px'}, 700 );
+			$('#fish').animate({top: '-=572px'}, 700 );
+			$('#fish').animate({left: '+=60px'}, 700 );
+		}
+		else if location == 19 {
+			$('#fish').animate({top: '-=60px'}, 700 );
+			$('#fish').animate({left: '-=578px'}, 700 );
+			$('#fish').animate({top: '+=60px'}, 700 );
+		}
+		else if location == 29 {
+			$('#fish').animate({left: '+=60px'}, 700 );
+			$('#fish').animate({top: '+=572px'}, 700 );
+			$('#fish').animate({left: '-=60px'}, 700 );
+		}
+		else if location == 39 {
+			$('#fish').animate({top: '+=60px'}, 700 );
+			$('#fish').animate({left: '+=578px'}, 700 );
+			$('#fish').animate({top: '-=60px'}, 700 );
+		}
+	  }
+	  else if (location == 30) {
+		$('#fish').animate({left: '-=578px'}, 700 );
+		$('#fish').animate({top: '-=572px'}, 700 );
+	  }
+	  else if ((location <= 10 || location == 40) || (location >= 20 && location < 30)){
+		$('#fish').animate({left: '+='+ x - last_x +'px'}, 700 );
+		$('#fish').animate({top: '+='+ y - last_y +'px'}, 700 );
+	  }
+	  else {
+		$('#fish').animate({top: '+='+ y - last_y +'px'}, 700 );
+		$('#fish').animate({left: '+='+ x - last_x +'px'}, 700 );
+	  }
+      return false;
+    };
+</script>
+    </body>
+</html>
+<script type="text/javascript">
+  $(function() {
+    var submit_form = function(e) {
+      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+        a: $('input[name="a"]').val(),
+        b: $('input[name="b"]').val()
+      }, function(data) {
+        $('#result').text(data.result);
+        $('input[name=a]').focus().select();
+      });
+      return false;
+    };
+    $('a#calculate').bind('click', submit_form);
+    $('input[type=text]').bind('keydown', function(e) {
+      if (e.keyCode == 13) {
+        submit_form(e);
+      }
+    });
+    $('input[name=a]').focus();
+  });
+</script>
+<script>
+$(function(){
+   var MoveFish = function(location, dice1, dice2, x, y, last_x, last_y) {
+	  if (dice1 + dice2 == 12){
+		if (location == 21) {
+			$('#fish').animate({left: '-=60px'}, 700);
+			$('#fish').animate({top: '-=572px'}, 700);
+			$('#fish').animate({left: '+=60px'}, 700);
+
+		}
+		else if (location == 31) {
+			$('#fish').animate({top: '-=60px'}, 700);
+			$('#fish').animate({left: '-=578px'}, 700);
+			$('#fish').animate({top: '+=60px'}, 700);
+		}
+		else if (location == 1) {
+			$('#fish').animate({left: '+=60px'}, 700);
+			$('#fish').animate({top: '+=572px'}, 700);
+			$('#fish').animate({left: '-=60px'}, 700);
+		}
+		else if (location == 11) {
+			$('#fish').animate({top: '+=60px'}, 700);
+			$('#fish').animate({left: '+=578px'}, 700);
+			$('#fish').animate({top: '-=60px'}, 700);
+		}
+	  }
+	  else if (location == 10 && last_y > 150) {
+		$('#fish').animate({left: '-=578px'}, 700 );
+		$('#fish').animate({top: '-=572px'}, 700 );
+	  }
+	  else if ((location <= 10 || location == 40) || (location >= 20 && location < 30)){
+		$('#fish').animate({top: '+='+ y - last_y +'px'}, 700 );
+		$('#fish').animate({left: '+='+ x - last_x +'px'}, 700 );
+	  }
+	  else {
+		$('#fish').animate({left: '+='+ x - last_x +'px'}, 700 );
+		$('#fish').animate({top: '+='+ y - last_y +'px'}, 700 );
+	  }
+   return false;
+   };
+   $('#fish').bind('click', MoveFish(10, 6, 5, 625, 25, 509, 597));
+});
+</script>

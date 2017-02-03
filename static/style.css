@@ -1,0 +1,235 @@
+/*----- Custom styles begin -----*/
+
+/*----- Fonts CDN ------*/
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+
+* {
+  font-family: cursive;
+  font-size: 25px;
+}
+
+body {
+  background: #0E9C5C;
+  background-image: linear-gradient(to bottom right, #26A386 0%, #1EC656 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.diceclick {
+  font-family: 'PT Sans', sans-serif;
+  display: inline-block;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0) !important;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  margin: 0 auto 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 100%;
+  margin: auto;
+}
+.newsite {
+    margin: 13px auto!important;
+}
+
+.diceclick:hover {
+  text-decoration: none;
+}
+
+.diceclick {
+  margin: 5px auto 0 !important;
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.diceclick:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
+
+.question {
+  text-align: center;
+  font-size: 21px;
+  /*height: 200px;
+  font-size: 100%;*/
+}
+
+.sendclick {
+  margin: 0 !important;
+}
+
+.answers {
+  display: flex;
+  justify-content: space-around;
+}
+
+span {
+  color: black;
+}
+
+#dice2 {
+  height: 10px;
+  width: 125px;
+  background: #fff;
+  color: #a3a3a3;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+  margin: 0 !important;
+}
+#dice {
+  text-align: center;
+  vertical-align: middle;
+  height: 65px;
+  width: 150px;
+  background: #fff;
+  color: #a3a3a3;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  /*padding: 22px 18px;*/
+  margin: 5px !important;
+}
+
+.player {
+  margin: auto;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.player input {
+  /*display: block;*/
+  margin: auto;
+}
+
+.__custom-wrapper {
+  text-align: center;
+  font-size: 21px !important;
+  padding: 30px 105px 55px;
+}
+
+
+
+
+/*----- Custom styles end------*/
+
+#wrapper {
+    width: 700px;
+    margin: 0 auto;
+}
+
+#block {
+    background-color: lightgrey;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#kubes {
+    background-color: black;
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#field {
+  font-family: 'PT Sans', sans-serif;
+  height: 650px;
+    background-repeat: no-repeat;
+    background-image: url('images/background2.png');
+    background-size: 95%;
+    background-position: center;
+    /*padding: 100px 80px;*/
+}
+
+#text {
+   margin: 400px;
+}
+
+#radios{
+  margin:25px;
+  font-size: 17px;
+}
+.inline{
+  display: inline-block;
+}
+.inline + .inline{
+  margin-left:10px;
+}
+.radio{
+  color:#999;
+  font-size:15px;
+  position:relative;
+}
+.radio span{
+    font-size: 21px;
+  position:relative;
+   padding-left:20px;
+}
+.radio span:after{
+  content:'';
+  width:15px;
+  height:15px;
+  border:3px solid;
+  position:absolute;
+  left:0;
+  top: 11px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+  box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
+.radio input[type="radio"]{
+   cursor: pointer;
+    width:100%;
+  height:100%;
+  z-index: 1;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+}
+.radio input[type="radio"]:checked + span{
+  color: lightgrey;
+}
+.radio input[type="radio"]:checked + span:before{
+    content:'';
+  width:5px;
+  height:5px;
+  position:absolute;
+  background: lightgrey;
+  left:5px;
+  top:16px;
+  border-radius:100%;
+  -ms-border-radius:100%;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+}
+.fish {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    background: transparent;
+}

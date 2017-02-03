@@ -1,0 +1,1 @@
+“Ти попав в політехніку, тому ось тобі запитання з C++. які типи конструкторів класів Ї у C++?' ; default constructor ; external constructor ; virtual constructor

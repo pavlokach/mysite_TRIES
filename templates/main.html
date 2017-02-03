@@ -60,9 +60,92 @@
             </div>
         </div>
         </form>
-        <script>
+        <script type=text/javascript>
+  $(function() {
+    $('#diceit').bind('click', function() {
+      //DICEIT
+        if ($('input[name="type_sent"]').val() == "diceit"){
+      $.getJSON($SCRIPT_ROOT + '/diceit', {
+         //type_sent: $('input[name="type_sent"]').val()
+      }, function(data) {
+        $("#type_sent").val(data.type_sent);
+        $("#question").text(data.question);
+        $("#dice1").attr("src", "../static/images/"+data.dice1+".jpg");
+        $("#dice2").attr("src", "../static/images/"+data.dice2+".jpg");
+        $("#both_dices").show();
+        $("#name_main_button").text(data.name_main_button);
+        $("#fish").css({top: data.y+"px", left: data.x +"px"});
+        if (data.type_sent == "answer_question")
+        {
+        //Answer
+        $('input[class="answer_user1"]').val(data.answers[0]);
+        $('span[class="answer_user1"]').text(data.answers[0]);
+        $('input[class="answer_user2"]').val(data.answers[1]);
+        $('span[class="answer_user2"]').text(data.answers[1]);
+        $('input[class="answer_user3"]').val(data.answers[2]);
+        $('span[class="answer_user3"]').text(data.answers[2]);
+        $("#radios").show();
+        $("#fish").css({top: data.y+"px", left: data.x +"px"});
+        }
+        else {
+        //Else
+        $("#radios").hide();
+        }
+      });}
+      //PASS_THREE
+        else if ($('input[name="type_sent"]').val() == "pass_three"){
+      $.getJSON($SCRIPT_ROOT + '/pass_three', {
+         //type_sent: $('input[name="type_sent"]').val()
+      }, function(data) {
+        $("#type_sent").val(data.type_sent);
+        $("#question").text(data.question);
+        $("#both_dices").hide();
+        $("#name_main_button").text(data.name_main_button);
+        $("#radios").hide();
+        $("#fish").css({top: data.y+"px", left: data.x +"px"});
+      });}
+      //PASS_TWENTY
+        else if ($('input[name="type_sent"]').val() == "pass_twenty"){
+      $.getJSON($SCRIPT_ROOT + '/pass_twenty', {
+         //type_sent: $('input[name="type_sent"]').val()
+      }, function(data) {
+        $("#type_sent").val(data.type_sent);
+        $("#question").text(data.question);
+        $("#both_dices").hide();
+        $("#name_main_button").text(data.name_main_button);
+        $("#radios").hide();
+        $("#fish").css({top: data.y+"px", left: data.x +"px"});
+      });}
+      //RETURN_TWENTY
+        else if ($('input[name="type_sent"]').val() == "return_twenty"){
+      $.getJSON($SCRIPT_ROOT + '/return_twenty', {
+         //type_sent: $('input[name="type_sent"]').val()
+      }, function(data) {
+        $("#type_sent").val(data.type_sent);
+        $("#question").text(data.question);
+        $("#both_dices").hide();
+        $("#name_main_button").text(data.name_main_button);
+        $("#radios").hide();
+        $("#fish").css({top: data.y+"px", left: data.x +"px"});
+      });}
+      //ANSWER_QUESTION
+        else if ($('input[name="type_sent"]').val() == "answer_question"){
+      $.getJSON($SCRIPT_ROOT + '/answer_question', {
+         //type_sent: $('input[name="type_sent"]').val()
+         user_answer: $('input[name=user_answer]:checked', '#myForm').val()
+      }, function(data) {
+        $("#type_sent").val(data.type_sent);
+        $("#question").text(data.question);
+        $("#both_dices").hide();
+        $("#name_main_button").text(data.name_main_button);
+        $("#radios").hide();
+        $("#fish").css({top: data.y+"px", left: data.x +"px"});
+      });}
+      return false;
+    });
 
-        </script>
+                });
+</script>
 
     </body>
 </html>

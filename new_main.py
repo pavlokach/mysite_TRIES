@@ -148,3 +148,5 @@ def beginning():
                            x=session["x"],
                            y=session["y"],
                            )
+if __name__ == "__main__":
+    app.run(debug=True)
